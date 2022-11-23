@@ -1,0 +1,12 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<% if current_user %>
+  <p>安安， <%= @user.email %> 歡迎光臨</p>
+
+<% else %>
+  <p> 請先登入</p>
+  <%= link_to "登入" , user_session_path %>
+  <%= link_to "註冊" , new_user_registration_path %>
+  
+<% end %>
