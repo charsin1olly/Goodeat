@@ -1,5 +1,4 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Goodeat</h1>
 
 <% if current_user %>
   <p>安安， <%= current_user.email %> 歡迎光臨</p>
@@ -7,6 +6,7 @@
   <%= link_to "登出" , destroy_user_session_path,method:"delete" %>
     <% if current_user.admin? %>
       <p>現在有[<%= User.count %>]個會員 </p>
+      
     <% end %>
 <% else %>
   <p> 請先登入</p>
