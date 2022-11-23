@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_23_151258) do
+ActiveRecord::Schema.define(version: 2022_11_23_155945) do
 
   create_table "foods", force: :cascade do |t|
     t.string "img"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_11_23_151258) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
+    t.string "user_id"
     t.index ["deleted_at"], name: "index_foods_on_deleted_at"
   end
 
