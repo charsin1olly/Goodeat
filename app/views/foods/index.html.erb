@@ -19,6 +19,9 @@
     <td><%= link_to "刪除" , food_path(food),method:"delete",data:{confirm:"確定刪除？"} %></td>
     <td><%= food.title %></td>
     <td><%= food.price %></td>
+    <td><button data-controller="order-btn"
+                data-action="click->order-btn#order"
+                data-order-btn-target="order-one">+</button></td>
   </tr>
   <% end %>
 </table>
