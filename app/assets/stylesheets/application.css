@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ .main_nav{
+  display: flex;
+  gap:10px;
+ }

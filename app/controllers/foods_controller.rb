@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food=Food.new(clean_food_params)
+    @food= current_user.foods.build(clean_food_params)
     
     if @food.save
       redirect_to foods_path ,notice:"新增成功"
@@ -42,10 +42,10 @@ class FoodsController < ApplicationController
 
   private
   def clean_food_params
-    params.require(:food).permit(:title , :price , :description)
+    params.require(:food).permit(:img, :title , :price , :description)
   end
 
   def find_food
-    @food=Food.find(params[:id])
+    @food=Food.find_by(params[:id])
   end
 end
