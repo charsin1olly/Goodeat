@@ -1,0 +1,25 @@
+<%= form_with(model: food) do |form| %>
+
+  <div>
+    <%= form.label :img %>
+    <%= form.text_field :img %>
+  </div>
+
+  <div>
+    <%= form.label :title ,"名稱"%>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :price ,"價格"%>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :description ,"簡述"%>
+    <%= form.text_area :description %>
+  </div>
+
+  <%= form.submit %>
+
+<% end %>

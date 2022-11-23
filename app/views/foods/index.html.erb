@@ -1,0 +1,23 @@
+<h1>菜單</h1>
+
+<%= link_to "新增菜色" , new_food_path %>
+
+<table>
+  <tr>
+    <td>查看</td>
+    <td>編輯</td>
+    <td>刪除</td>
+    <td>名稱</td>
+    <td>價格</td>
+  </tr>
+
+  <% @foods.each do|food| %>
+  <tr>
+    <td><%= link_to "查看" , food_path(food) %></td>
+    <td><%= link_to "編輯" , edit_food_path(food) %></td>
+    <td><%= link_to "刪除" , food_path(food),method:"delete",data:{confirm:"確定刪除？"} %></td>
+    <td><%= food.title %></td>
+    <td><%= food.price %></td>
+  </tr>
+  <% end %>
+</table>
