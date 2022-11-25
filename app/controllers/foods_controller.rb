@@ -1,5 +1,6 @@
-class FoodsController < ApplicationController
-  before_action :find_food ,only: [:show ,:edit ,:update ,:destroy]
+class FoodsController < ApplicationController  
+  # before_action :authenticate_user! ,only: [:show ]
+  before_action :find_food ,only: [:show ,:edit ,:update ,:destroy ,:buy]
   
   def index
     @foods=Food.all
@@ -39,6 +40,11 @@ class FoodsController < ApplicationController
     @food.destroy
     redirect_to foods_path ,notice:"刪除成功"
   end
+
+  def buy
+    # render html:params
+  end
+
 
   private
   def clean_food_params

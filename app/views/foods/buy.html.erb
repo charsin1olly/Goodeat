@@ -1,0 +1,20 @@
+
+<section>
+  <header><h1><%= @food.title %></h1></header>
+  <p>單價：<%= @food.price %></p>
+
+
+  <%= form_with(url:"#",data:{ controller: "order-quantity"}) do |f| %>
+
+  <button data-action="click->order-quantity#minus">-</button>
+  <input type="number" value="1" min="1" max="5" data-order-quantity-target="quantity" name="quantity">
+  <button data-action="click->order-quantity#plus">+</button>
+
+  <button>結帳！</button>
+  
+  <% end %>
+
+
+
+
+</section>
