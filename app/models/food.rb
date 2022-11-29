@@ -7,4 +7,5 @@ class Food < ApplicationRecord
 
   #relationship
   belongs_to :user
+  has_many :comments
 end

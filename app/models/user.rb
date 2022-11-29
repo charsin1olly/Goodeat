@@ -12,4 +12,5 @@ class User < ApplicationRecord
 
     #relationship
     has_many :foods
+    has_many :comments
 end

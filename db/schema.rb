@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_23_163102) do
+ActiveRecord::Schema.define(version: 2022_11_28_183503) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "food_id", null: false
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.datetime "deleted_at"
+    t.index ["food_id"], name: "index_comments_on_food_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "foods", force: :cascade do |t|
     t.string "img"
@@ -38,4 +49,5 @@ ActiveRecord::Schema.define(version: 2022_11_23_163102) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "foods"
 end

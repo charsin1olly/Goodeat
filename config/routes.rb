@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       get :buy
     end
+    resources :comments ,only: [:create ,:destroy] ,shallow: true
   end
 
 end
