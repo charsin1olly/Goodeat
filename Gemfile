@@ -43,7 +43,6 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'dotenv-rails', groups: [:development, :test]
 end
 
 group :test do
@@ -65,3 +64,7 @@ gem 'net-imap', require: false
 gem 'net-pop', require: false
 
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+#第三方
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
